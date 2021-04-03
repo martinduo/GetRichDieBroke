@@ -27,7 +27,10 @@ git clone https://github.com/martinduo/GetRichDieBroke.git
 1.  Install VS Code.
 
 ```
-Start VS Code and under File/Open Folder...
+Download-
+https://code.visualstudio.com/download
+
+Start VS Code, and under File/Open Folder...
 select the folder holding the cloned repo.
 ```
 
