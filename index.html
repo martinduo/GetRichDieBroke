@@ -1,0 +1,934 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Rich Die Broke</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/themes/smoothness/jquery-ui-modified.css" rel="stylesheet" />
+    <link href="css/sidemenu.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/charts.css" rel="stylesheet" />
+    <link href="css/gridstyle.css" rel="stylesheet" />
+    <link href="css/gridstyle-ipad.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/dragdealer.css" rel="stylesheet" />
+    <link href="css/keypad.css" rel="stylesheet" />
+
+  <script src="scripts/jquery-2.1.0.min.js"></script>
+  <script src="scripts/jquery-ui.min.js"></script>
+  <script src="scripts/jquery.ui.touch-punch.min.js"></script>
+  <script src="scripts/modernizr.custom.76026.js"></script>
+  <script src="scripts/hammer.js"></script>
+  <script src="scripts/jquery.hammer.js"></script>
+  <script src="scripts/json2.js"></script>
+  <script src="scripts/numpad.js"></script>
+  <script src="scripts/carousel.js"></script>
+  <script src="scripts/dragdealer.js"></script>
+
+
+</head>
+
+<body style="-ms-touch-action: none">
+    <!--allows finger drag to work on Win8 touch screen-->
+    <!--see: http://blogs.msdn.com/b/ie/archive/2011/10/19/handling-multi-touch-and-mouse-input-in-all-browsers.aspx-->
+    <!--<div class="overlay display-none"><div class="overlay-spinner"><div class="large progress"></div></div></div>-->
+    <!--<a href='javascript:loadProducts()'> margins </a>-->
+    <!--<div id="marklet0">
+         <span id="marklet1">marklet1</span><span id="marklet2">marklet2</span><span id="marklet3">marklet3</span><span id="marklet4">marklet4</span>
+    </div>--
+
+    <!--*************************Splash Screen*******************************************-->
+    <div id="splashScreen" style="height: 100%; width: 100%">
+
+        <div id="splashlogo">
+            <!--<h3 style="margin-left: 74px;">Beta Version</h3>-->
+            <img src="images/chart bars.png" title="Get Rich, Die Broke" alt="Get Rich, Die Broke" width="251" height="127" border="0" style="width: 251px;" />
+        </div>
+
+        <div id="no-js" class="splash-error-text">
+          <h1>This program requires JavaScript to work.</h1>
+        </div>
+        <div id="no-mobile" class="hide-splash-error-text">
+            <h3>Mobile Safari has some errors running Get Rich Die Broke.</h3>
+            <h3>You can use the iPad Chrome browser or else</h3>
+            <h3>install the free App Store app for use in your device.</h3>
+        </div>
+        <div id="no-flex" class="hide-splash-error-text">
+            <h3>This program requires a modern browser to work:</h3>
+            <!--<h3>Use Chrome 32+, Safari 7+ on an iPad or</h3>-->
+            <h3>IE 10+ or Chrome 31+.</h3>
+        </div>
+        <div id="too-small" class="hide-splash-error-text">
+          <h1>Needs a bigger screen to display properly.</h1>
+        </div>
+
+    </div>
+    <script>
+        document.getElementById("no-js").innerHTML = ''; //if JS is working, the warning is removed, else it stays and the splash screen stays also
+    </script>
+
+    <!--*************************Key Pad Screen*******************************************-->
+    <div id="keypadOverlay" class="display-none" style="height: 100%; width: 100%">
+        <div id="keypadContainer" class="keypad">
+            <div id="keypadButtons">
+                <table class="buttons">
+                    <tr><td><div>1</div></td><td><div>2</div></td><td><div>3</div></td></tr>
+                    <tr><td><div>4</div></td><td><div>5</div></td><td><div>6</div></td></tr>
+                    <tr><td><div>7</div></td><td><div>8</div></td><td><div>9</div></td></tr>
+                    <tr><td></td><td><div>0</div></td><td></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--*************************ChartsPage**********************************************-->
+    <div id="chartsPage" class="Grid workPanel display-none">
+
+        <div class="Row TitleRow">
+            <!--Start the FlexBox area-->
+            <div class="Grid-host-menu">
+                <div class="iconButton iconButtonHome">
+                    <!--<div id="HomeButton"><i class="fa fa-arrow-circle-o-left fa-2x"></i></div>-->
+                    <div id="HomeButton"><i class="fa fa-arrow-left fa-2x"></i></div>
+                </div>
+                <div class="titleText pagetitle">
+                    Get Rich Die Broke
+                </div>
+                <div class="fullScreenButton iconButton">
+                    <div class="screenButton"><i class="fa fa-expand fa-2x"></i></div>
+                    <div class="screenButton display-none"><i class=" fa fa-compress fa-2x"></i></div>
+                </div>
+
+                <!--<div id="chartsFullScreenButton" class="fullScreenButton iconButton">
+                    <div class="screenButton"><i class="fa fa-expand fa-2x"></i></div>
+                    <div class="screenButton display-none"><i class=" fa fa-compress fa-2x"></i></div>
+                </div>-->
+                <!--<div id="chartsFullScreenButton" class="fullScreenButton iconButton">
+                    <div class="screenButton"><i class="fa fa-plus-square-o"></i></div>
+                    <div class="screenButton display-none"><i class=" fa fa-minus-square-o"></i></div>
+                </div>-->
+
+
+            </div>
+            <!--End the FlexBox area-->
+        </div>
+
+        <div class="Row HeaderRow">
+            <!--just a spacer under the title-->
+            &nbsp;
+        </div>
+
+        <div class="Row Expand MainRow">
+
+            <div class="Grid">
+
+                <div class="Column LSideColumn">
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="Column Expand ContentColumn">
+                    <!--position:relative 0,0-->
+
+                    <div class="FlexboxContainer">
+                        <!--position:relative 0,0-->
+                        <!--Start the FlexBox area-->
+
+                        <div class="Grid-host">
+                            <!--position:absolute 0,0-->
+
+                            <div id="charts-graph-cell">
+                                <!--flexbox item: for responsive positioning-->
+
+                                <div id="carousel">
+                                    <!--containing element for chart carousel-->
+                                    <!-- graphs of chart data go here -->
+                                    <!-- there are a possible 16 different charts -->
+                                    <div id="panel-scroller">
+                                        <div id="chart-0" class="panel pane16 display-none"></div>
+                                        <div id="chart-1" class="panel pane1 display-none"></div>
+                                        <div id="chart-2" class="panel pane2 display-none"></div>
+                                        <div id="chart-3" class="panel pane3 display-none"></div>
+
+                                        <!----------------------------------------------------------
+                                        These elements are dynamically inserted in every chart panel for a CSS3 Table layout
+                                        <div class = "Grid containerGraph">
+                                            <div class = "Row chartTitle"></div>
+                                            <div class = "Row chartBars"></div>
+                                            <div class = "Row chartLegend"></div>
+                                        </div>
+                                        ----------------------------------------------------------->
+
+                                        <div id="chart-4" class="panel pane4 display-none"></div>
+                                        <div id="chart-5" class="panel pane5 display-none"></div>
+                                        <div id="chart-6" class="panel pane6 display-none"></div>
+                                        <div id="chart-7" class="panel pane7 display-none"></div>
+                                        <div id="chart-8" class="panel pane8 display-none"></div>
+                                        <div id="chart-9" class="panel pane9 display-none"></div>
+                                        <div id="chart-10" class="panel pane10 display-none"></div>
+                                        <div id="chart-11" class="panel pane11 display-none"></div>
+                                        <div id="chart-12" class="panel pane12 display-none"></div>
+                                        <div id="chart-13" class="panel pane13 display-none"></div>
+                                        <div id="chart-14" class="panel pane14 display-none"></div>
+                                        <div id="chart-15" class="panel pane15 display-none"></div>
+                                    </div>
+
+                                </div>
+
+                                <!--NOTE: #charts-graph-cell flex block is assigned a fixed height, to include only the-->
+                                <!--".containerGraph", forcing the chart legend row to stick to the bottom of the flex block.-->
+                                <!--Hence #pagination and #control-panel are outside, and the #table-data-cell flex block-->
+                                <!--is positioned below them using a big margin-top value when in portrait mode.-->
+
+                                <div id="pagination" class="charts-pagination"></div>
+
+                                <div id="control-panel">
+
+                                    <div class="control-panel-text">See How Different Rates Effect Your Money</div>
+
+                                    <table id="sliders">
+
+                                        <tr>
+                                            <!--<td class="slider-margin"></td>-->
+                                            <!--<td class="slider-text"><span id="roitext" class="slider-prompt-text">See adjustPrompts() for text</span></td>-->
+                                            <td class="slider-label">
+                                                <span id="roi-prompt" class="slider-textbox-label">Change ROI:</span>
+                                            </td>
+                                            <td class="slider-bar">
+                                                <div id="roi-slider" class="dragdealer rounded-cornered getrich">
+                                                    <div id="roi-handle" class="red-bar handle"></div>
+                                                </div>
+                                            </td>
+                                            <td id="roitext" class="slider-value hideContent"><input type="text" id="roirate" class="input-element-rate" readonly="true" /></td>
+                                            <td class="slider-margin"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <!--<td class="slider-margin"></td>-->
+                                            <!--<td class="slider-text"><span id="colatext" class="slider-prompt-text">See adjustPrompts() for text</span></td>-->
+                                            <td class="slider-label">
+                                                <span id="cola-prompt" class="slider-textbox-label">Change COLA:</span>
+                                            </td>
+                                            <td class="slider-bar">
+                                                <!--<div id="colaSlider" class="mySlider"></div>-->
+                                                <div id="cola-slider" class="dragdealer rounded-cornered getrich">
+                                                    <div id="cola-handle" class="red-bar handle"></div>
+                                                </div>
+                                            </td>
+                                            <td id="colatext" class="slider-value"><input type="text" id="colarate" class="input-element-rate" readonly="true" /></td>
+                                            <td class="slider-margin"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <!--<td class="slider-margin"></td>-->
+                                            <!--<td class="slider-text"><span id="taxtext" class="slider-prompt-text">See adjustPrompts() for text</span></td>-->
+                                            <td class="slider-label">
+                                                <span id="tax-prompt" class="slider-textbox-label">Change TAX:</span>
+                                            </td>
+                                            <td class="slider-bar">
+                                                <div id="tax-slider" class="dragdealer rounded-cornered getrich">
+                                                    <div id="tax-handle" class="red-bar handle"></div>
+                                                </div>
+                                            </td>
+                                            <td id="taxtext" class="slider-value hideContent"><input type="text" id="taxrate" class="input-element-rate" readonly="true" /></td>
+                                            <td class="slider-margin"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <div id="table-data-cell">
+                                <!--flexbox width:300-->
+
+                                <div id="chartGrids">
+
+                                    <!-- tables of chart data go here -->
+                                    <!-- there are a possible 16 different charts -->
+                                    <div id="table-0" class="table-grid display-none"></div>
+                                    <div id="table-1" class="table-grid display-none"></div>
+                                    <div id="table-2" class="table-grid display-none"></div>
+
+                                    <!----------------------------------------------------------
+                                    These elements are dynamically inserted into every table's DIV
+                                    <div class = ""containerTable">
+                                        <div class = "chartLegendScrollLock">
+                                            <div class = "chartTitle"></div>
+                                            <div class = "chartLegend"></div>
+                                        </div>
+                                        <div class = "chartTable">
+                                            <div class = ""chartTableSection"">
+                                                <div class = ""chartTableScroller""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    ----------------------------------------------------------->
+
+                                    <div id="table-3" class="table-grid display-none"></div>
+                                    <div id="table-4" class="table-grid display-none"></div>
+                                    <div id="table-5" class="table-grid display-none"></div>
+                                    <div id="table-6" class="table-grid display-none"></div>
+                                    <div id="table-7" class="table-grid display-none"></div>
+                                    <div id="table-8" class="table-grid display-none"></div>
+                                    <div id="table-9" class="table-grid display-none"></div>
+                                    <div id="table-10" class="table-grid display-none"></div>
+                                    <div id="table-11" class="table-grid display-none"></div>
+                                    <div id="table-12" class="table-grid display-none"></div>
+                                    <div id="table-13" class="table-grid display-none"></div>
+                                    <div id="table-14" class="table-grid display-none"></div>
+                                    <div id="table-15" class="table-grid display-none"></div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <!--End the FlexBox area-->
+
+                    </div>
+
+                </div> <!--Column Expand-->
+
+                <div id="RSide" class="Column RSideColumn">
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="Row FooterRow">
+            <!--<div id="chartsFullScreenButton" class="fullScreenButton iconButton">
+                <div class="screenButton"><i class="fa fa-expand fa-2x"></i></div>
+                <div class="screenButton display-none"><i class=" fa fa-compress fa-2x"></i></div>
+            </div>-->
+        </div>
+    </div>
+
+
+
+    <!--*************************HomePage**********************************************-->
+
+    <div id="HomePage" class="st-container workPanel display-none" data-effect="st-effect-1">
+
+        <nav id="appbar" class="st-menu st-effect-1">
+            <div id="savingDemo" class="appbardiv"><i class="fa fa-dot-circle-o fa-3x"></i><div class="appbartext">Green Demo</div></div>
+            <div id="retiredDemo" class="appbardiv"><i class="fa fa-dot-circle-o fa-3x"></i><div class="appbartext">Red Demo&nbsp;&nbsp;&nbsp;</div></div>
+            <div id="userData" class="appbardiv"><i class="fa fa-dot-circle-o fa-3x"></i><div class="appbartext">Your Data&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+
+            <div id="clearData" class="appbardiv"><i class="fa fa-dot-circle-o fa-3x"></i><div class="appbartext">Clear Data&nbsp;&nbsp;&nbsp;&nbsp;</div></div>
+            <div id="setPin" class="appbardiv"><i class="fa fa-dot-circle-o fa-3x"></i><a class="appbartext">Set PIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+
+            <a id="userCommentLink" href="#"><div id="userComment" class="appbardiv"><i class="fa fa-dot-circle-o fa-3x"></i><span class="appbartext">Comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></a>
+            <!--<div id="userComment"><i class="fa fa-dot-circle-o fa-3x"></i><a id="userCommentLink" href="#" class="appbartext">Comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>-->
+
+            <!--<div id="userComment"><i class="fa fa-dot-circle-o fa-3x"></i><div class="appbartext">Comment&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div>-->
+            <!--<div id="rateApp"><i class="fa fa-dot-circle-o fa-3x"></i><div class="appbartext">Rate The App</div></div>-->
+            <!--<div class="fullScreenButton iconButton">
+                <div class="screenButton"><i class="fa fa-expand fa-2x"></i></div>
+                <div class="screenButton display-none"><i class=" fa fa-compress fa-2x"></i></div>
+            </div>-->
+
+        </nav>
+
+        <div id="homepageGrid" class="Grid containerGrid">
+
+            <div class="Row TitleRow">
+                <!--Start the FlexBox area-->
+                <div class="Grid-host-menu">
+                    <div id="buttonMenu" class="iconButton iconButtonMenu">
+                        <div id="MenuButton"><i class="fa fa-bars fa-2x"></i></div>
+                    </div>
+                    <div id="toolTipTest" class="titleText pagetitle">
+                        Get Rich Die Broke
+                    </div>
+                    <div class="fullScreenButton iconButton">
+                        <div class="screenButton"><i class="fa fa-expand fa-2x"></i></div>
+                        <div class="screenButton display-none"><i class=" fa fa-compress fa-2x"></i></div>
+                    </div>
+                </div>
+                <!--End the FlexBox area-->
+            </div>
+
+            <div class="Row HeaderRow">
+                <!--just a spacer under the title-->
+                &nbsp;
+            </div>
+
+            <div class="Row Expand MainRow">
+
+                <div class="Grid">
+                    <div class="Column LSideColumnHome">
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="Column Expand ContentColumn">
+                        <!--position:relative 0,0-->
+
+                        <div class="FlexboxContainer">
+                            <!--position:relative 0,0-->
+                            <!--Start the Flexbox area-->
+
+                            <div class="Grid-host">
+                                <!--position:absolute 0,0-->
+
+                                <div id="home-list-cell">
+                                    <!--flex box-->
+
+                                    <div id="listSection" class="LabelText blockList">
+                                        <!-- table-of-contents inserted here -->
+                                    </div>
+                                </div>
+
+                                <div id="home-data-cell">
+                                    <!--flex box-->
+
+                                    <div id="tabviewSection" class="overflow">
+
+                                        <div id="tabviewScroller">
+
+                                            <div id="tabsOuter-0" class="tabContainer display-none">
+                                                <div id="tabs-0" class="tabs tabContent-table-logo">
+                                                    <table class="table-logo">
+                                                        <tr>
+                                                            <td id="logo-left" class="logo-left">
+                                                                &nbsp;Get<br />Rich
+                                                            </td>
+                                                            <td id="logo-middle" class="logo-middle">
+                                                                <img src="images/chart bars.png" title="Get Rich, Die Broke" alt="Get Rich, Die Broke" width="180" height="90" border="0" style="width: 180px;">
+                                                                <!--<img src="images/chart bars.png" title="Get Rich, Die Broke" alt="Get Rich, Die Broke" width="251" height="127" border="0" style="width: 249px;">-->
+                                                                <!--<img src="images/chart bars.png" title="Get Rich, Die Broke" alt="Get Rich, Die Broke" width="120" height="60" border="0">-->
+                                                            </td>
+                                                            <td id="logo-right" class="logo-right">
+                                                                Die<br />&nbsp;Broke
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="table-columnHeadings">
+                                                        <tr>
+                                                            <th id="fuchsia" class=smallheading>Starting<br>Balance</th>
+                                                            <th id="yellow" class=smallheading>Year End<br>Deposits</th>
+                                                            <th id="aqua" class=smallheading>Year End<br>Earnings</th>
+                                                            <th id="red" class=smallheading>Paid For<br>Taxes</th>
+                                                            <th id="lime" class=smallheading>Paid For<br>Retirement</th>
+                                                        </tr>
+                                                    </table>
+                                                    &nbsp;<br />
+                                                    <div class="logo-brag">
+                                                        <h2>Charts That Show The</h2>
+                                                        <h2>Compounding Effects Of</h2>
+                                                        <h2> Earnings, Taxes, And Inflation</h2>
+                                                        <h2> On Your Money.</h2>
+                                                    </div>
+                                                    <div id="helpAppIcon" name="tabs-7"><i class="fa fa-question-circle fa-2x"></i></div>
+
+                                                    <div id="helpDebug"></div> <!--**************************************-->
+
+                                                </div>
+                                            </div>
+
+                                            <div id="tabsOuter-1" class="tabContainer display-none">
+                                                <div id="tabs-1" class="tabs tabContent"></div>
+                                            </div>
+
+                                            <div id="tabsOuter-2" class="tabContainer display-none">
+                                                <div id="tabs-2" class="tabs tabContent"></div>
+                                            </div>
+
+                                            <div id="tabsOuter-3" class="tabContainer display-none">
+                                                <div id="tabs-3" class="tabs tabContent"></div>
+                                            </div>
+
+                                            <div id="tabsOuter-4" class="tabContainer display-none">
+                                                <div id="tabs-4" class="tabs tabContent"></div>
+                                            </div>
+
+                                            <div id="tabsOuter-5" class="tabContainer display-none">
+                                                <div id="tabs-5" class="tabs tabContent"></div>
+                                            </div>
+
+                                            <div id="tabsOuter-6" class="tabContainer display-none">
+                                                <div id="tabs-6" class="tabs tabContent">
+                                                    <!--used for data entry error message-->
+                                                </div>
+                                            </div>
+
+                                            <div id="tabsOuter-7" class="tabContainer display-none">
+                                                <div id="tabs-7" class="tabs tabContent tabContent-table-logo">
+                                                    <!--this is a help page-->
+                                                    <table class="help-page-table-logo">
+                                                        <tr>
+                                                            <td colspan="3" class="logo-middle">
+                                                                <img src="images/chart bars.png" title="Get Rich, Die Broke" alt="Get Rich, Die Broke" width="160" height="90" border="0" style="width: 160px;">
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <div class="tabHelp ">
+
+                                                        <p class="page-lead">Experiment With The Two Demo Example Plans</p>
+                                                        <p><span class="forTouch">Tap</span><span class="forMouse">Click</span> the menu icon &nbsp;<i class="fa fa-bars fa-1x"></i>&nbsp; at top left to show the side-bar menu for choices of demo example plans.</p>
+                                                        <p>You can change the demo plan's data entry values to experment. When you leave a demo plan, the original demo data entry values are restored.</p>
+
+
+
+                                                        <p class="page-lead">The User Interface</p>
+                                                        <p>Swipe the data window up and down to scroll.</p>
+                                                        <p>Drag the charts left and right to pan, or select one of the pagination dots to show that chart.</p>
+
+                                                        <p class="page-lead">A Note About The Charts</p>
+                                                        <p>
+                                                            Chart bars are not drawn to scale, but are sized logarithmically proportional to their value.
+                                                            <!--This allows you to see trends in each category without the large account values overwhelming the small ones graphically.-->
+                                                            The actual values are shown in the accompanying data table.
+                                                            To see which chart bar corresponds to a particular year in the data table, just <span class="forTouch">tap</span><span class="forMouse">click</span> that year in the table
+                                                            and the corresponding chart bar will pulse.
+
+                                                            <!--Actual values can also be seen in a pop-up if you <span id="helpnote1">touch/click</span> a bar segment.-->
+                                                        </p>
+
+                                                        <p>
+                                                            Slide the chart page's rate sliders to interactively change the charts to show the effect of rate changes.
+                                                            These rate changes are temporary, used only for these interactive tests, and are not permanently saved in your plan's data.
+                                                        </p>
+
+                                                        <p class="page-lead">Privacy Of Your Data</p>
+                                                        <p>
+                                                            This program respects your privacy. The information that you enter here is kept in your own device only. It is not disclosed to any other person or organization.
+                                                            This program saves your information locally for use the next time you use this program.
+                                                        </p>
+                                                        <p>
+                                                            If you have any concern with others using your device, you can use the side-bar menu to select the Clear Data option.
+                                                            This will remove all the data you entered for your plan. Data for the demo plans are not effected.
+                                                        </p>
+                                                        <p>
+                                                            Another option is to use the side-bar menu and select Set PIN.
+                                                            You can then enter a 4 digit PIN to block access to this program without first entering the PIN.
+                                                            Once you have entered your PIN you have access to this program with your data.
+                                                            Then you can change your PIN anytime by selecting the Set PIN menu choice.
+                                                            If you select the Set PIN menu choice and then exit the program without entering digits, you clear the PIN requirement.
+                                                            If you clear your data, your PIN requirement is cleared also.
+                                                        </p>
+                                                        <p class="page-lead">Comments</p>
+                                                        <p>Please send comments, suggestions, and bug reports using the side-bar's Comment menu choice.</p>
+                                                    </div>
+
+                                                    <!--<div id="swipeHelp1">
+                                                        <img src="images/swipe2pan.png" />
+                                                    </div>
+                                                    <div id="swipeHelp3" class="page-lead display-none">
+                                                        <p>Swipe the data up and down to scroll.</p>
+                                                        <p>Drag the charts left and right to pan.</p>
+                                                    </div>-->
+                                                </div>
+                                            </div>
+
+                                            <div id="tabsOuter-8" class="tabContainer display-none">
+                                                <div id="tabs-8" class="tabs tabContent">
+                                                    <div class="tabContentTitle" style="background-color:#34495e;">
+                                                        <h2 class="page-title" style="color:white">Green Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                                    </div>
+                                                    <div class="tabContent-demohelp">
+                                                        <br /><h2 class="tabData">A Working Couple, Planning Before Retirement</h2>
+
+                                                        <div class="tabData input-introduction">
+
+                                                            <p class="demo-page-lead">Green Demo Charts</p>
+
+                                                            <p class="demo-para">
+                                                                <span class="forTouch">Tap</span><span class="forMouse">Click</span> a demo chart image to enlarge it. Then grab and drag the top bar to move it.
+                                                            </p>
+
+                                                            <p class="demo-para">
+                                                                This section explains the actual charts you will see if you use
+                                                                the green demo with its default values and go to see the Interactive Money Charts.
+                                                                The demo shows the couple's planning as it was prepared in 2013 to project out for a life
+                                                                span of 99 years. The projection uses assumptions and account values entered at that time.
+                                                            </p>
+
+                                                            <p class="demo-para">
+                                                                This is a live demo. You can experiment and change the values to see the resulting charts.
+                                                                The values are reset to their initial values when you exit the demo.
+
+                                                                <!--These assumptions and balances should be reviewed and entered again yearly to generate a new projection with revised data.-->
+                                                                <!--Each chart is shown with numbered tags that link to text below the image.-->
+                                                            </p>
+                                                            <p class="demo-para">
+                                                                Chart bars are not drawn to scale, but are sized logarithmically proportional to their value.
+                                                                This allows you to see trends in each category without the large account values overwhelming the small ones graphically.
+                                                                The actual values are shown in the accompanying table.
+                                                                Actual values can also be seen if you touch and hold on a bar segment, as shown below.
+                                                            </p>
+
+                                                            <!-- 1 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Overall Finances<br></span></div>
+                                                                <img id="green1" class="demo-image" title="Overall Finances" src="images/green overall.png" style="width: 430px; height: 260px; border: 1px;" />
+                                                                <!--<img id="green1" class="demo-image" title="Overall Finances" src="images/green overall.png" style="width: 430px; height: 260px; border: 1px;" onclick="doDialog(event)" />-->
+                                                            </div>
+
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                <!--When you touch and hold a bar segment, the year, and value will show in a pop-up.
+                                                                The same data for the year (2044) is shown in the table on the right side.-->
+
+                                                                <span class="forTouch">
+                                                                    The pop up shown only works with a mouse pointer (sorry). But when you tap any year in the data table,
+                                                                    the corresponding chart bar will pulse to show you its location.
+                                                                </span>
+                                                                <span class="forMouse">
+                                                                    When you rest your cursor over a bar segment, the year, and value will show in a pop-up.
+                                                                    The same data for the year (2044) is shown in the table on the right side.
+                                                                </span>
+                                                            </p>
+
+                                                            <div class="demo-bullet"><div class="demo-index">2</div></div>
+                                                            <p class="demo-para">
+                                                                The year 2023 is the first year of retirement. Money is now drawn from accounts to finance
+                                                                the retirement living expenses. The details of the money drawn from each account are shown
+                                                                on the other charts.
+                                                            </p>
+
+                                                            <div class="demo-bullet"><div class="demo-index">3</div></div>
+                                                            <p class="demo-para">
+                                                                These sliders let you experiment by changing the assumed value for earnings, inflation, and taxes.
+                                                                The program will recalculate your finances with the new value and show the result in the chart and table. These experimental changes do not update the values entered in the data entry page. You can reset your charts by going back the the start page, then <span class="forTouch">tapping</span><span class="forMouse">clicking</span> the charts button again.
+                                                            </p>
+
+                                                            <div class="demo-bullet"><div class="demo-index">4</div></div>
+                                                            <p class="demo-para">
+                                                                The dots here are pagination indicators for the calculated charts.
+                                                                They show which chart of the group is currently shown.
+                                                                You can swipe your finger on the charts to slide them left or right.
+                                                                You can also <span class="forTouch">tap</span><span class="forMouse">click</span> any dot to move directly to that chart.
+                                                            </p>
+
+                                                            <!-- 2 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Your Normal Investments<br></span></div>
+                                                                <img id="green2" class="demo-image" title="Your Normal Investments" src="images/green normal.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+
+                                                            <p class="demo-para">
+                                                                This is an interesting chart showing an effect of a large IRA.
+                                                                A large IRA can happen, for example, as the result of a rollover from a
+                                                                past employer's beneficial profit sharing plan.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                Retirement payouts start with first person's retirement in year 2023.
+                                                                The first person to retire stops depositing into the taxable account.
+                                                                The second person's savings are still deposited into the taxable account until that person also retires.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">2</div></div>
+                                                            <p class="demo-para">
+                                                                The second person retires in year 2034 and stops depositing into the taxable account.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">3</div></div>
+                                                            <p class="demo-para">
+                                                                The second person reaches 70 1/2 years old in year 2038 and must take Required Minimum Distributions from IRA.
+                                                                That IRA is large and the distribution is more than is needed for retirement living expenses,
+                                                                so the excess amount is deposited into the taxable account. No money needs to be withdrawn from the taxable account.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">4</div></div>
+                                                            <p class="demo-para">
+                                                                The large IRA has been reduced by year 2057 so that the required distribution is not
+                                                                enough to cover the retirement living expenses.
+                                                                The money needed to make up the balance of the retirement living expenses is again taken from the taxable account.
+                                                                The money needed is not taken from the IRA, but
+                                                                is kept in the IRA where it earns tax deferred profits
+                                                                to maximize your earning efficiency.
+                                                                No more deposits are made into the taxable account.
+                                                            </p>
+
+                                                            <!-- 3 -->
+
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Your IRA<br></span></div>
+                                                                <img id="green3" class="demo-image" title="Your IRA" src="images/green your ira.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                You retire in year 2023 and stop making deposits into your IRA.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">2</div></div>
+                                                            <p class="demo-para">
+                                                                You reach age 70 1/2 in year 2028 and start taking Required Minimum Distributions from your IRA.
+                                                                These are used to contribute to the needed retirement living expenses.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">3</div></div>
+                                                            <p class="demo-para">
+                                                                When you die in year 2057, your spouse inherits your IRA account balance.
+                                                            </p>
+
+                                                            <!-- 4 -->
+
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Spouse IRA<br></span></div>
+                                                                <img id="green4" class="demo-image" title="Spouse IRA" src="images/green spouse ira.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                Your spouse retires in year 2034 and stops making deposits into her IRA.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">2</div></div>
+                                                            <p class="demo-para">
+                                                                Your spouse reaches age 70 1/2 in year 2038 and starts taking Required Minimum Distributions from the IRA.
+                                                                The distribution is more than enough to cover the balance of funds needed for retirement living expenses,
+                                                                so the excess (shown in grey) is deposited in the taxable account.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">3</div></div>
+                                                            <p class="demo-para">
+                                                                The IRA account balance has been reduced so that the RMD from the account is not
+                                                                large enough to cover the balance of funds needed for retirement living expenses,
+                                                                so the taxable account begins to provide funds again.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">4</div></div>
+                                                            <p class="demo-para">
+                                                                When you die in year 2057, your spouse inherits your IRA account balance, without tax consequences.
+                                                            </p>
+                                                            <div class="demo-bullet"><div class="demo-index">5</div></div>
+                                                            <p class="demo-para">
+                                                                The taxable account runs out of money in 2065, so in years 2065, 2066, and 2067,
+                                                                your spouse's IRA solely supplements the pension and social security payments to cover
+                                                                the balance of funds needed for retirement living expenses. The IRA is depleted the year your spouse dies in 2067.
+                                                            </p>
+
+                                                            <!-- 5 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Spouse Pension<br></span></div>
+                                                                <img id="green5" class="demo-image" title="Spouse Pension" src="images/green spouse pension.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <p class="demo-para-nobullet">
+                                                                Your spouse's pension plan payments are not indexed, and so continue to deliver fixed payments for life.
+                                                            </p>
+                                                        </div>
+
+                                                        <!-- 6 -->
+                                                        <div class="inlineImage">
+                                                            <div class="inlineImageTitle"><span>Your Social Security<br></span></div>
+                                                            <img id="green6" class="demo-image" title="Your Social Security" src="images/green your ss.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                        </div>
+                                                        <p class="demo-para-nobullet">
+                                                            Your social security payments are indexed for inflation, and continue to deliver adjusted payments for life.
+                                                        </p>
+
+                                                        <!-- 7 -->
+                                                        <div class="inlineImage">
+                                                            <div class="inlineImageTitle"><span>Spouse Social Security<br></span></div>
+                                                            <img id="green7" class="demo-image" title="Spouse Social Security" src="images/green spouse ss.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                        </div>
+                                                        <p class="demo-para-nobullet">
+                                                            Your spouse's social security payments are indexed for inflation, and continue to deliver adjusted payments for life.
+                                                        </p>
+                                                        <p class="demo-para">
+                                                            &nbsp;
+                                                        </p>
+
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div id="tabsOuter-9" class="tabContainer display-none">
+                                                <div id="tabs-9" class="tabs tabContent">
+                                                    <div class="tabContentTitle" style="background-color:#34495e;">
+                                                        <h2 class="page-title" style="color:white">Red Demo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+                                                    </div>
+                                                    <div class="tabContent-demohelp">
+                                                        <br /><h2 class="tabData">A Retired Couple, Monitoring Their Cash Flow</h2>
+
+                                                        <div class="tabData input-introduction">
+
+                                                            <p class="demo-page-lead">Red Demo Charts</p>
+
+                                                            <p class="demo-para">
+                                                                <span class="forTouch">Tap</span><span class="forMouse">Click</span> a demo chart image to enlarge it. Then grab and drag the top bar to move it.
+                                                            </p>
+
+                                                            <p class="demo-para">
+                                                                This section explains the actual charts you will see if you use
+                                                                the red demo with its default values and go to see the Interactive Money Charts.
+                                                                The demo shows the couples' planning as it was prepared in 2013 to project out for a life
+                                                                span of 99 years. The projection uses assumptions and account values entered at that time.
+                                                            </p>
+
+                                                            <p class="demo-para">
+                                                                This is a live demo. You can experiment and change the values to see the resulting charts.
+                                                                The values are reset to their initial values when you exit the demo.
+
+                                                                <!--These assumptions and balances should be reviewed and entered again yearly to generate a new projection with new data.-->
+                                                                <!--Each chart is shown with numbered tags that link to text below the image.-->
+                                                            </p>
+                                                            <p class="demo-para">
+                                                                Chart bars are not drawn to scale, but are sized logarithmically proportional to their value.
+                                                                This allows you to see trends in each category without the large account values overwhelming the small ones graphically.
+                                                                The actual values are shown in the accompanying table.
+                                                                Actual values can also be seen if you touch and hold on a bar segment, as shown below.
+                                                            </p>
+
+                                                            <!-- 1 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Overall Finances<br></span></div>
+                                                                <img id="red1" class="demo-image" title="Overall Finances" src="images/red overall.png" style="width: 430px; height: 260px; border: 1px;" />
+                                                            </div>
+
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                <!--When you touch and hold a bar segment, the year, and value will show in a pop-up.
+                                                                The same data for the year (2027) is shown in the table on the right side.-->
+
+                                                                <span class="forTouch">
+                                                                    The pop up shown only works with a mouse pointer (sorry). But when you tap any year in the data table,
+                                                                    the corresponding chart bar will pulse to show you its location.
+                                                                </span>
+                                                                <span class="forMouse">
+                                                                    When you rest your cursor over a bar segment, the year, and value will show in a pop-up.
+                                                                    The same data for the year (2044) is shown in the table on the right side.
+                                                                </span>
+                                                            </p>
+
+                                                            <div class="demo-bullet"><div class="demo-index">2</div></div>
+                                                            <p class="demo-para">
+                                                                The year 2034 is the last one with a beginning balance in any asset account.
+                                                                Retirement funding now is from pensions and social security payments.
+                                                            </p>
+
+                                                            <div class="demo-bullet"><div class="demo-index">3</div></div>
+                                                            <p class="demo-para">
+                                                                These sliders let you experiment by changing the assumed value for earnings, inflation, and taxes.
+                                                                The program will recalculate your finances with the new value and show the result in the chart and table. These experimental changes do not update the values entered in the data entry page. You can reset your charts by going back the the start page, then <span class="forTouch">tapping</span><span class="forMouse">clicking</span> the charts button again.
+                                                            </p>
+
+                                                            <div class="demo-bullet"><div class="demo-index">4</div></div>
+                                                            <p class="demo-para">
+                                                                The dots here are pagination indicators for the calculated charts.
+                                                                They show which chart of the group is currently shown.
+                                                                You can swipe your finger on the charts to slide them left or right.
+                                                                You can also <span class="forTouch">tap</span><span class="forMouse">click</span> any dot to move directly to that chart.
+                                                            </p>
+
+                                                            <!-- 2 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Your Normal Investments<br></span></div>
+                                                                <img id="red2" class="demo-image" title="Your Normal Investments" src="images/red normal.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                The taxable asset accounts run out of money in 2028.
+                                                                During the years from 2013 both IRA accounts have had Minimum Required Distributions withdrawn,
+                                                                and pension and social security payments were received. Those were not enough to fund
+                                                                the total retirement living expenses, so money was withdrawn out of the taxable accounts to make up the balance.
+                                                                Now withdrawals from the IRA accounts will have to increase to fund the entire amount
+                                                                needed for retirement living expenses.
+                                                            </p>
+
+                                                            <!-- 3 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Your IRA<br></span></div>
+                                                                <img id="red3" class="demo-image" title="Your IRA" src="images/red your ira.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                During the three years starting in 2029 your IRA had more than the Minimum Required Distributions withdrawn
+                                                                to help fund the total retirement living expenses. Your IRA accounts run out of money in 2031.
+                                                                Now withdrawals from your spouse's IRA accounts will increase to make up the balance to fund the entire amount
+                                                                needed for retirement living expenses.
+                                                            </p>
+
+                                                            <!-- 4 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Spouse IRA<br></span></div>
+                                                                <img id="red4" class="demo-image" title="Spouse IRA" src="images/red spouse ira.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <div class="demo-bullet"><div class="demo-index">1</div></div>
+                                                            <p class="demo-para">
+                                                                For the years 2032 and 2033 your spouse's IRA had more than the Minimum Required Distributions withdrawn
+                                                                to make up the balance to fund the total retirement living expenses. This IRA account ran out of money in 2034, and the total of
+                                                                receipts from pension and social security payments are all that remain to fund retirement living expenses.
+                                                                This is less than you have specified, but at year 2034 you are 94 and your spouse is 92. This projection is so far
+                                                                into the future as to be meaningless, except to show how important it is
+                                                                that you keep revising this plan yearly to keep your financial status current to ensure having enough money at this age.
+                                                            </p>
+
+                                                            <!-- 5 -->
+                                                            <div class="inlineImage">
+                                                                <div class="inlineImageTitle"><span>Spouse Pension<br></span></div>
+                                                                <img id="red5" class="demo-image" title="Spouse Pension" src="images/red spouse pension.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                            </div>
+                                                            <!--<div class="demo-bullet"><div class="demo-index">~</div></div>-->
+                                                            <p class="demo-para-nobullet">
+                                                                Your spouse's pension plan payments are not indexed, and so continue to deliver fixed payments for life.
+                                                            </p>
+                                                        </div>
+
+                                                        <!-- 6 -->
+                                                        <div class="inlineImage">
+                                                            <div class="inlineImageTitle"><span>Your Social Security<br></span></div>
+                                                            <img id="red6" class="demo-image" title="Your Social Security" src="images/red your ss.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                        </div>
+                                                        <!--<div class="demo-bullet"><div class="demo-index">~</div></div>-->
+                                                        <p class="demo-para-nobullet">
+                                                            Your social security payments are indexed for inflation, and continue to deliver adjusted payments for life.
+                                                        </p>
+
+                                                        <!-- 7 -->
+                                                        <div class="inlineImage">
+                                                            <div class="inlineImageTitle"><span>Spouse Social Security<br></span></div>
+                                                            <img id="red7" class="demo-image" title="Spouse Social Security" src="images/red spouse ss.png" style="width: 410px; height: 230px; border: 1px;" />
+                                                        </div>
+                                                        <!--<div class="demo-bullet"><div class="demo-index">~</div></div>-->
+                                                        <p class="demo-para-nobullet">
+                                                            Your spouse's social security payments are indexed for inflation, and continue to deliver adjusted payments for life.
+                                                        </p>
+                                                        <p class="demo-para">
+                                                            &nbsp;
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div> <!--tabviewSection-->
+                                </div>
+                            </div>
+                            <!--End the Flexbox area-->
+                        </div>
+                    </div>
+                    <div id="RSide" class="Column RSideColumn">
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Row FooterRow">
+                <!--<div id="homeFullScreenButton" class="fullScreenButton iconButton">
+                    <div class="screenButton"><i class="fa fa-expand fa-2x"></i></div>
+                    <div class="screenButton display-none"><i class=" fa fa-compress fa-2x"></i></div>
+                </div>-->
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/startup.js"></script>
+    <script src="js/buildintrotab.js"></script>
+    <script src="js/buildgeneraltab.js"></script>
+    <script src="js/buildirastab.js"></script>
+    <script src="js/buildsavingstab.js"></script>
+    <script src="js/buildincometab.js"></script>
+    <script src="js/utility.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/buildchartdata.js"></script>
+    <script src="js/buildchart.js"></script>
+    <script src="js/buildgrid.js"></script>
+    <script src="js/buildcontrolpanel.js"></script>
+    <script src="js/sidebareffects.js"></script>
+
+
+</body>
+
+</html>

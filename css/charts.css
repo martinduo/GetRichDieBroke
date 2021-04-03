@@ -1,0 +1,373 @@
+﻿/******************The Carousel**************************************/
+
+#carousel {
+	background: silver;
+	overflow: hidden;
+	width:100%; 
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+	transform: translate3d(0,0,0) scale3d(1,1,1);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+#carousel #panel-scroller {
+	min-height: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+	   
+#carousel #panel-scroller.animate {
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+#carousel #panel-scroller {
+	-ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	-webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	transform: translate3d(0%,0,0) scale3d(1,1,1);
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+#carousel #panel-scroller {
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.2);
+	box-shadow: 0 0 20px rgba(0,0,0,.2);
+	position: relative;
+}
+ 
+#carousel .panel {
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+
+	float: left;
+	overflow: hidden;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+
+	background: #ecf0f1; /*clouds*/
+}
+
+
+/******************The Table Of Chart Data Values********************************/
+
+#chartGrids {
+	border: 0.5px solid;
+	width: 100%;
+	height: 100%;
+}
+
+.table-grid {
+	width: 100%;
+	height: 100%;
+}
+
+.containerTable {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.chartLegendScrollLock {
+	width: 100%;
+	height: 61px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+.chartTitle {
+	width: 100%;
+	height: 36px;
+	overflow:hidden;
+	background-color: #ecf0f1;
+	/*border: 0.5px solid;*/
+}
+
+.chartLegend {
+	width: 100%;
+	height: 25px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #ecf0f1; /*clouds*/
+}
+
+/*.rowCollapse {
+	visibility: collapse;
+}*/
+
+.chartTable {
+	width: 100%;
+	height: calc(100% - 61px);
+	background-color: #ecf0f1; /*clouds*/
+}
+
+	.chartTable .chartTableSection {
+		height: 100%;
+		width: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+        /*-webkit-overflow-scrolling: touch;*/ /*causes bug in animating chart bars when tapping year after swiped scroll*/
+	}
+
+	.chartTable .chartTableSection .chartTableScroller {
+		height: 100%;
+	}
+
+.grid-header-title {
+	margin-top: 6px;
+	width: 100%;
+	text-align: center;
+	/*font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 12pt;*/
+}
+
+/*.chartDataColumns {
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Segoe UI Light', Helvetica, Arial, sans-serif;
+	background-color: white;
+	border-right: 1px solid; 
+	border-bottom: 1px solid;
+	border-left: 1px solid; 
+	border-collapse: collapse; 
+}*/
+
+/*.chartDataColumnHeader {
+	width: 100%;
+	height: 47px;
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	background-color: snow;
+	border-right: 1px solid; 
+	border-bottom: 1px solid;
+	border-left: 1px solid; 
+	border-collapse: collapse; 
+}*/
+
+	/*.chartDataColumnHeader tr {
+		height: 25px;
+		vertical-align:top;
+	}*/
+
+
+.chartDataColumnHeaders {
+    table-layout:fixed;
+	width: 100%;
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	background-color: snow;
+	border: 1px solid #34495e; /*Wet asphalt*/ 
+	border-collapse: collapse; 
+}
+
+    .chartDataColumnHeaders tr {
+	    height: 25px;
+	    /*vertical-align: middle;*/
+	    /*text-align: center;*/
+	    /*border: 1px solid #34495e;*/ /*Wet asphalt*/
+	    /*border-collapse: collapse;*/ 
+    }
+
+    .chartDataColumnHeaders td {
+	    vertical-align: middle;
+	    text-align: center;
+	    border: 1px solid #34495e; /*Wet asphalt*/
+	    border-collapse: collapse; 
+    }
+
+
+.chartDataColumnRows {
+    /*table-layout:fixed;*/
+	width: 100%;
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	background-color: #ecf0f1;
+	border: 1px solid #34495e; /*Wet asphalt*/ 
+	border-collapse: collapse; 
+}
+
+	.chartDataColumnRows tr {
+		height: 25px;
+	}
+
+	.chartDataColumnRows td {
+		vertical-align: middle;
+		text-align: center;
+		border: 1px solid #34495e; /*Wet asphalt*/
+		border-collapse: collapse; 
+	}
+
+.dataYear:hover {
+    cursor: pointer;
+}
+
+.rowLow {
+	/*height: 5px;*/
+    /*font-size: 15px;*/
+}
+
+
+/*this selector appears in the dynamically injected HTML carousel charts to get a CSS table Grid*/ 
+#carousel #panel-scroller .containerGraph {
+	border: 1px solid #95a5a6;
+	height: 100%;
+}
+
+/*this selector appears in the dynamically injected HTML charts for a CSS table Row*/
+#carousel #panel-scroller .chartTitle {
+	height: 50px;
+}
+
+/*this selector appears in the dynamically injected HTML charts for a CSS table Row*/
+#carousel #panel-scroller .chartBars {
+	/*height: -webkit-calc(100%-108px);
+	height: calc(100%-100px);*/
+	height: 240px;
+}
+
+/*this selector appears in the dynamically injected HTML charts for a CSS table Row*/
+#carousel #panel-scroller .chartLegend {
+	height: 50px;
+}
+
+#chartLegend {
+height: 40px;
+margin-top: 10px;
+margin-left: -1px;
+}
+
+.charts-table {
+	background-color: #ecf0f1; /*clouds*/
+	border-collapse: collapse; 
+	border-spacing: 0px 0px; /*first is horizontal between adjacent bars, second is vertical between plus bars and minus bars*/ 
+	/*margin-top: 50px;*/
+}
+
+	.charts-legend tbody {
+		font-size: 12pt;
+		text-align: right;
+		/*padding-right: 4px;*/
+	}
+
+		.charts-legend tbody td {
+			padding-right: 4px;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+	.charts-table td {
+		/*border: 1px solid #95a5a6;*/
+		padding: 0px;
+	}
+
+.charts-title {
+	text-align: center;
+	background-color: #ecf0f1; /*clouds*/
+	border-collapse: collapse; 
+	height: 50px;
+}
+.charts-title-text {
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 18pt;
+}
+
+.charts-title-text.small {
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+	padding-bottom: 5px;
+}
+
+.charts-legend {
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 20pt;
+}
+
+#control-panel {
+	/*margin-top: 10px;*/
+	/*border: 0.5px solid;*/
+}
+
+#control-panel .control-panel-text {
+	font-size: 1.5em; /*3em*/
+	text-align:center;
+	width: 100%;
+}
+
+.input-element-rate {
+	width: 50px;
+}
+
+.charts-pagination {
+}
+
+#pagination {
+	margin-top: 0px; /*20px;*/
+	height: 60px; 
+}
+.pagination-center-span {
+	/*width: 512px;*/ /*change this dynamically for the total width of all the circles plus margins*/
+	margin: 0 auto;
+	height: 42px;
+}
+
+/*this is the touch target, not seen, behind the smaller visible circle*/
+.charts-pagination-target {
+	position: relative;
+	display: inline-block;
+	float: right;
+	margin: 0px;
+	width: 30px; /*42px;*/
+	height: 60px; /*72px;*/ /*42px;*/
+	background: #E0E6FF; 
+}
+
+/*this is the visible pagination circle*/
+.charts-pagination-circle {
+	position: relative;
+	top: 22px; /*12px;*/
+	left: 6px; /*12px;*/
+	/*display: inline-block;*/
+	/*float: right;*/
+	/*margin-top: 8px;*/
+	/*margin-right: 20px;*/
+	/*margin-left: 20px;*/
+	border-radius: 50%;
+	width: 18px; /*12px;*/
+	height: 18px; /*12px;*/    
+	background: #7f8c8d; /*Asbestos*/ 
+}
+.charts-pagination-circle:hover {
+    cursor: pointer;
+}
+
+/*this the overlaying circle showing which pagination circle is the active one*/
+.charts-pagination-active {
+	position: relative;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	width: 18px;
+	height: 18px;    
+	background: #fff;
+	border: 1px solid #000;
+}
+
+td.above-line-cell {
+	border-bottom: 2px outset blue ; /* draws a horizontal line dividing plus from minus changes */
+}
+

@@ -1,0 +1,537 @@
+﻿
+/*** CSS for the CSS Table layout ***/
+
+*, *:after, *:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.hide-splash-error-text {
+		display:none;
+}
+
+.splash-error-text {
+	margin-top:80px;
+	text-align:center;
+	display:normal;
+}
+
+#splashscreen {
+	z-index:2000;
+	background: -webkit-linear-gradient(red, blue); /* For Safari */
+	background: linear-gradient(red, blue); /* Standard syntax */
+	display: -webkit-flex;
+	display: flex; /*allows child item use margins to position itself in center*/
+}
+#splashlogo {
+	width: 251px;
+	height: 127px;
+	margin-top: 25%;
+	margin-left: auto;
+	margin-right: auto;
+}
+	#splashlogo > h2 {
+		margin-left: 14px;
+	}
+
+*>.Grid {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.Grid>.Row {
+	display: table-row;
+	height: 1px;
+}
+.Grid>.Row.Expand {
+	height: auto;
+}
+.Grid>.Column, .Grid>.Row>.Column {
+	display: table-cell;
+	/*width: 1px;*/
+}
+.Grid>.Column.Expand, .Grid>.Row>.Column.Expand {
+	width: auto;
+}
+
+/* Optional CSS for a sticky footer at the CSS table bottom */
+html, body  {
+	/*background: #EDEDED;*/
+	background-color: #E0E6FF;
+	/*background-color: #ecf0f1;*/
+	height: 100%;
+	min-height: 100%;
+	margin: 0em;
+	font-family: ‘Segoe UI’, Helvetica, Tahoma, Arial;
+}
+body{
+  position: relative;
+}
+
+/* Some other CSS for the look */
+		
+body>.Grid {
+	/*background: #EDEDED;*/
+	margin: 0em;
+	padding: 0em;
+	table-layout: fixed;  /*NOTE Speed up table rendering*/ 
+}   
+
+.HeaderRow {
+	/*background: #EDEDED;*/
+	height: 1em;
+}
+.TitleRow {
+	/*background: #EDEDED;*/
+	height: 3em;
+}
+
+/****************************Sliders****************************************************/
+.mySlider .ui-state-default {
+	background: none;
+	color: #ff0000;
+}
+
+.mySlider.ui-slider .ui-slider-handle {
+	margin-left: -4px;
+	top:-8px;
+	border:none;
+}
+
+.mySlider {
+	height: 20px;
+	background: #eee
+}
+
+.sliderRow {
+	height: 20px;
+}
+
+.rounded-cornered,
+.rounded-cornered .handle {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+#sliders {
+	margin-top: 10px;
+	width: 550px;
+}
+.slider-margin {
+	width: 5%;
+}
+#sliders td.slider-label {
+	text-align:right;
+	width: 30%;
+}
+
+/*#sliders td.slider-text {
+	width: 40%;
+}*/
+
+#sliders td.slider-bar {
+	width: 55%;
+}
+#sliders td.slider-value {
+	width: 10%;
+}
+.slider-prompt-text {
+	margin-left: 0px;
+	font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 14pt;
+}
+.slider-textbox-label {
+	font-family: 'Segoe UI Bold', Helvetica, Arial, sans-serif;
+	font-size: 15pt;
+}
+
+input[type="text"].input-element-rate {
+	font-family: 'Segoe UI Bold', Helvetica, Arial, sans-serif;
+	font-size: 14pt;
+	line-height: 22px;
+	padding: 0;
+}
+input[type="text"] {
+	width: 66px;
+	height: 26px;
+}
+#roi-slider {
+	width: 100%;
+}
+#cola-slider {
+	width: 100%;
+}
+#tax-slider {
+	width: 100%;
+}
+
+
+
+#sliders {
+	/*margin-left: 4em;*/
+}
+.sliderRow {
+	height: 20px;
+}
+.MainRow {
+	/*background: #EDEDED;*/
+}
+.InsideGrid {
+}
+
+.ContentColumn {
+	/*background: #4cff00;*/
+	/*border: solid 1px #000000;*/
+	/*putting "position:relative 0,0" here fails under Firefox, an extra container DIV is added as a hack*/ 
+	position:relative;
+	top:0;
+	left:0;
+}
+
+.FlexboxContainer { /*extra container DIV is required to hack Firefox to do "position:relative 0,0" above correctly*/
+/*this is needed to keep the child '.Grid-host' <div> positioned absolutely correctly; see '.Grid-host' - 1-12-2014*/
+	position:relative; 
+	top:0;
+	left:0;
+	height:100%;
+}
+
+.LSideColumnHome {
+	width: 4em;
+}
+
+.RSideColumn {
+	/*background: #EDEDED;*/
+	width:4em;
+}
+.FooterRow {
+	/*background: #EDEDED;*/
+	height: 4em;
+}
+
+#charts-graph-cell {
+	-webkit-flex: initial ;
+	flex: initial ;
+	background-color:#cff;
+	padding: 0;
+	height: 350px;
+	border: solid 1px #808080;
+}
+
+#table-data-cell {
+	-webkit-flex: initial ;
+	flex: initial ;
+	background-color: #ecf0f1;
+	padding: 0;
+	margin-bottom: 20px;
+	width: 410px; /*300px;*/
+	/*height: 350px;*/ /*depends on media query*/
+	border: solid 1px #808080;
+}
+
+#blockDataCharts {
+	/*padding: 8px;*/
+	/*background-color: #F8F8F8;*/
+}
+
+.ColumnIcon {
+	/*width:4em;*/
+	/*background: #EDEDED;*/
+}
+
+.ColumnText {
+	/*background: #EDEDED;*/
+}
+
+.LabelText{
+}
+	  
+.blockList{
+	/*padding: 8px;*/
+	/*background-color: #F8F8F8;*/
+}
+.blockData{
+	/*padding: 8px;*/
+	/*background-color: #F8F8F8;*/
+}
+
+/*** The CSS Flexbox Grid Layout Styles ***/
+
+.Grid-host-menu {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: flex-start;
+  justify-content:flex-start;
+  -webkit-align-items: flex-end;
+  align-items:flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.iconButton {
+    /*-webkit-flex: initial;*/
+    /*flex: initial;*/
+    height: 40px;
+    width: 40px;
+}
+.iconButton:hover {
+    cursor: pointer;
+}
+
+
+.titleText {
+	color: #34495e; /*Wet asphalt*/
+	font-size: 2em; /*3em*/
+	height: 1.1em;
+	-webkit-flex: initial;
+	flex: initial ;
+	/*background: #EDEDED;*/
+	/*background-color:#ff6a00;*/
+	/*height: 40px;*/
+	/*margin-left: 20px;*/
+	/*margin-bottom: 20px;*/
+	/*ppadding-left: 50px;*/
+	/*border: solid 1px #808080;*/
+}
+
+.Grid-host {
+  //background:#ff6a00;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content:flex-start;
+  justify-content:flex-start;
+  -webkit-align-items:flex-start;
+  align-items:flex-start;
+  position:absolute; /*work around to keep this <div> positioned correctly inside of the '.ContentColumn' DIV - 1-12-2014*/
+  top:0;
+  left:0;
+}
+
+#home-list-cell {
+	-webkit-flex: initial ;
+	flex: initial ;
+	padding: 0;
+}
+
+#home-data-cell {
+	-webkit-flex: initial ;
+	flex: initial ;
+	background-color:#ecf0f1;
+	padding: 0;
+	height: 530px;  /*570px;*/
+	width: 460px;
+	border: solid 1px #808080;
+}
+
+#marklet0 {
+	position: absolute;
+	top: 0;
+	left: 200px;
+	z-index: 100;
+	width: 300px;
+	height: 10px;
+	background: #ffffff;
+	display:normal;
+}
+#marklet1 {
+	width: 30px;
+	height: 10px;
+	background: #0094ff;
+	display:normal;
+}
+#marklet2 {
+	width: 30px;
+	height: 10px;
+	background: #ff00dc;
+	display:normal;
+}
+#marklet3{
+	width: 30px;
+	height: 10px;
+	background: #ffd800;
+	display:normal;
+}
+#marklet4 {
+	width: 30px;
+	height: 10px;
+	background: #4cff00;
+	display:normal;
+}
+.hideContent {
+	visibility:hidden;
+}
+
+#dialog {
+	z-index: 100;
+}
+
+.fullScreenButton {
+    /*float: right;*/
+    margin-left: auto;
+    margin-right: 1em;
+}
+.screenButton {
+	margin-bottom: 0.5em;
+    margin-left: 1em;
+    z-index:222;
+}
+
+/**********************************narrow screens**********pretend iPad in portrait****************************/
+
+@media (max-width: 1020px) {
+
+	.forTouch {
+		display: none;
+	}
+	.forMouse {
+		display: inline;
+	}
+ 
+	.iconButtonMenu{
+		margin-right: 5.5em;
+		margin-top: 0.8em;
+	margin-left: 1em;
+	}
+	.iconButtonMenuDemo{
+		margin-right: 2.6em;
+		margin-top: 0.8em;
+	margin-left: 1em;
+	}
+
+	.iconButtonHome{
+		margin-right: 1.8em;
+		margin-top: 0.8em;
+	margin-left: 1em;
+	}
+
+   .Grid-host{
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	   -webkit-justify-content: flex-start;
+	  justify-content: flex-start;
+	  -webkit-align-items: flex-start;
+	  align-items: flex-start;
+   }
+
+   .LSideColumn {
+		width:4em;
+	}
+
+	/***********************ChartsPage*******portrait************/
+
+   #charts-graph-cell{
+		margin-left: 55px;
+		margin-right: 0px;
+		width: 500px;
+	}
+   #table-data-cell {
+		margin-left: 110px;
+		margin-top: 220px;
+		height: 250px;
+	}
+   .overlay-spinner {
+	  left: calc(305px - 1.5em);
+	}
+
+	/**********************HomePage*********portrait**************/
+
+	#marklet1 {
+		display:none;
+	}
+	#home-list-cell{
+		margin-top: 20px;
+		margin-left: 100px;
+		margin-right: 0px;
+		width: 414px;
+	}
+	#home-data-cell{
+		margin-left: 82px;
+	   -webkit-order: -1;  
+	   order: -1; 
+	}
+	#listSection .colortabledata {
+		height: 30px;
+		font-size: 14pt;
+	}
+}
+
+/****************************** wide screens **************pretend iPad in landscape************************************/
+
+@media (min-width: 1021px) {
+
+	.forTouch {
+		display: none;
+	}
+	.forMouse {
+		display: inline;
+	}
+
+	.iconButtonMenu{
+		margin-right: 2em;
+		margin-top: 0.8em;
+	margin-left: 1em;
+	}
+	.iconButtonMenuDemo{
+		margin-right: 2em;
+		margin-top: 0.8em;
+	margin-left: 1em;
+	}
+
+	.iconButtonHome{
+		margin-right: 1.8em;
+		margin-top: 0.8em;
+	margin-left: 1em;
+   }
+
+	.Grid-host {
+	 -webkit-flex-direction: row;
+	 flex-direction: row;
+	  -webkit-justify-content: flex-start;
+	  justify-content: flex-start;
+	  -webkit-align-items: flex-start;
+	  align-items: flex-start;
+	}
+
+	.LSideColumn {
+		width:2em;
+	}
+
+
+	/*************************ChartsPage*******landscape***************/
+	 #charts-graph-cell{
+	   margin-left:8px;
+	   width:500px;
+	}
+	#table-data-cell{
+	   height: 514px; /*400px;*/
+	   margin-left: 30px;
+	}
+   .overlay-spinner {
+	  left: calc(258px - 1.5em);
+	}
+
+	/*************************HomePage*********landscape***************/
+	 #marklet2 {
+		display:none;
+	}
+	#home-list-cell{
+		margin-left:20px;
+		width:350px;
+	}
+	#home-data-cell{
+		margin-left: 40px;
+	}
+	#listSection .colortabledata {
+		height: 60px;
+		font-size: 16pt;
+	}
+
+}
+

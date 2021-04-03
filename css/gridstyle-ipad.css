@@ -1,0 +1,180 @@
+﻿
+/******************************iPad in portrait**************************************/
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) 
+{
+
+	.forTouch {
+		display: inline;
+	}
+	.forMouse {
+		display: none;
+	}
+
+	.iconButtonMenu{
+		margin-right: 5.5em;
+		margin-top: 0.8em;
+	}
+	.iconButtonMenuDemo{
+		margin-right: 2.6em;
+		margin-top: 0.8em;
+	}
+
+	.iconButtonHome{
+		margin-right: 1.8em;
+		margin-top: 0.8em;
+	}
+
+   .Grid-host{
+		-webkit-flex-direction: column;
+		flex-direction: column;
+		-webkit-justify-content: flex-start;
+		justify-content: flex-start;
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
+   }
+
+       .LSideColumn {
+	    width:4em;
+    }
+
+   .demo-index {
+		top: -2px;
+	}
+
+
+	/*************************ChartsPage*****portrait*************/
+   #charts-graph-cell{
+	   margin-left: 55px;
+	   margin-right: 0px;
+	   width: 500px;
+	}
+	#table-data-cell{
+	   /*-webkit-flex: initial ;
+	   flex: initial ;*/
+	   height: 240px; /*320px;*/
+	   margin-left: 110px;
+	   margin-top: 220px;
+	}
+
+    .chartDataColumnRows {
+	    border: 2px solid #34495e; /*Wet asphalt*/ 
+	    border-collapse: collapse; 
+    }
+
+    .chartDataColumnRows td {
+	    border: 2px solid #34495e; /*Wet asphalt*/
+	    border-collapse: collapse; 
+    }
+
+
+
+	/*************************HomePage*****portrait***************/
+	 #marklet3 {
+		display:none;
+	}
+   #home-list-cell{
+		margin-top: 20px;
+		margin-left: 100px; /*129px;*/ /*82px;*/
+		margin-right: 0px;
+		width: 414px; /*365px;*/
+	}
+	#home-data-cell{
+	   margin-left: 82px;
+	   -webkit-order: -1;  
+	   order: -1; 
+	}
+	#listSection .colortabledata {
+		height: 30px;
+		font-size: 14pt;
+	}
+
+}
+
+/******************************iPad in landscape*******************************************/
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) 
+{
+
+	.forTouch {
+		display: inline;
+	}
+	.forMouse {
+		display: none;
+	}
+
+	.iconButtonMenu{
+		margin-right: 2em;
+		margin-top: 0.8em;
+	}
+	.iconButtonMenuDemo{
+		margin-right: 2em;
+		margin-top: 0.8em;
+	}
+
+	.iconButtonHome{
+		margin-right: 2em;
+		margin-top: 0.8em;
+   }
+
+	.Grid-host {
+	 -webkit-flex-direction: row;
+	 flex-direction: row;
+	  -webkit-justify-content: flex-start;
+	  justify-content: flex-start;
+	  -webkit-align-items: flex-start;
+	  align-items: flex-start;
+	}
+
+    .LSideColumn {
+	    width:2em;
+    }
+
+
+	.demo-index {
+		top: -2px;
+	}
+
+	/*************************ChartsPage*****landscape**************/
+	#charts-graph-cell{
+	   margin-left:8px;
+	   width: 500px;
+	}
+	#table-data-cell{
+	   height: 514px;
+	   margin-left: 30px;
+	}
+
+    .chartDataColumnRows {
+	border: 2px solid #34495e; /*Wet asphalt*/ 
+	border-collapse: collapse; 
+    }
+
+    .chartDataColumnRows td {
+	    border: 2px solid #34495e; /*Wet asphalt*/
+	    border-collapse: collapse; 
+    }
+
+
+	/*************************HomePage******landscape***************/
+	  #marklet4 {
+		display:none;
+	}
+	#home-list-cell{
+	   margin-left:20px;
+	   width:350px;
+	}
+	#home-data-cell{
+	   margin-left: 40px;
+	}
+	#listSection .colortabledata {
+		height: 60px;
+		font-size: 16pt;
+	}
+}
+
+

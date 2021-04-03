@@ -1,0 +1,35 @@
+/**
+ * Dragdealer.js 0.9.6
+ * http://github.com/skidding/dragdealer
+ *
+ * (c) 2010+ Ovidiu Cherecheș
+ * http://skidding.mit-license.org
+ */
+
+.dragdealer {
+  position: relative;
+  height: 30px;
+  background: #EEE;
+  border: 1px solid blue
+}
+.dragdealer .handle {
+  position: absolute;
+  height: 28px;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.dragdealer .red-bar {
+  width: 80px;
+  height: 28px;
+  background: #CC0000;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 28px;
+  text-align: center;
+}
+.dragdealer .disabled {
+  background: #898989;
+}
+
+/*added by bcm for the GRDB app*/
