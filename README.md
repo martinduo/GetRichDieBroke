@@ -2,14 +2,14 @@
 
 The New York Times Business section on April 3, 2021, had a "Pandemic Spurs Interest in Teaching Financial Literacy" article in the "Your Money Advisor" column by Ann Carrns.
 
-The GetRichDieBroke program can be a great tool for teaching the compounding effects of earnings, taxes, and inflation over time. It is a simple interactive financial calculator with sliders that adjust those rates with immediate visual feedback.
+The GetRichDieBroke program is perfect for teaching financial literacy.
+It plots cash flow projections over time with interactive charts. It shows the compounding effects of earnings, taxes, and inflation on your money. On screen sliders change those rates with immediate visual results.
 
-Today I'm posting it as open source on GitHub
-with a MIT license.
+Today I posted it as open source on GitHub with a MIT license.
 
-Back when I was learning JS I found Danny Goodman's book "Dynamic HTML" from O'Reilly. It showed how to work with just HTML and produce a great app. That resource helped me write this interactive financial planning program as my first JS hobby project in 1998. That program is at GetRichDieBroke.com.
+Back when I was learning JS I found Danny Goodman's book "Dynamic HTML" from O'Reilly. It showed how to work with just HTML and produce a great app. That resource helped me write this interactive financial planning program as my first JS hobby project in 1998. That program is hosted at GetRichDieBroke.com.
 
-Now you can run it locally by just loading index.html in a browser.
+You can run it locally by just loading index.html in a browser.
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ select the folder holding the cloned repo.
 ```
 
 1.  In .vscode/launch.json, select the configuration shown below.
-1.  Then hit f5 to run the program on your default browser.
+1.  Then hit f5 to run the program on your browser.
 
 ```
 "configurations": [
@@ -51,12 +51,16 @@ select the folder holding the cloned repo.
 
 **Application**
 
-The program can be used as an easy to use teaching tool.
+The program is an easy to use teaching tool.
 
-It can run on iPads, notebooks, and desktop computers.
+It runs on iPads, notebooks, and desktop computers.
 
 None of this setup is needed to use it.
 
+Anyone can run it. It's already hosted on the Web.
+
 ```
-Just enter GetRichDieBroke.com in your browser.
+Enter GetRichDieBroke.com in a browser.
 ```
+
+![](https://github.com/martinduo/GetRichDieBroke.git/blob/main/images/GetRichBrokeDemo.png)
