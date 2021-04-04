@@ -1,20 +1,20 @@
-## Introduction
+## GetRichDieBroke
 
-The New York Times Business section on April 3, 2021, had a "Pandemic Spurs Interest in Teaching Financial Literacy" article in the "Your Money Advisor" column by Ann Carrns.
+The New York Times Business section on April 3, 2021, had an article in the "Your Money Advisor" column by Ann Carrns titled "Pandemic Spurs Interest in Teaching Financial Literacy".
 
 The GetRichDieBroke program is perfect for teaching financial literacy.
-It plots cash flow projections over time with interactive charts. It shows the compounding effects of earnings, taxes, and inflation on your money. On screen sliders change those rates with immediate visual results.
+It plots cash flow projections over time with interactive charts. It shows the compounding effects of earnings, taxes, and inflation on your money. On-screen sliders change those rates with immediate visual results.
 
-Today I posted it as open source on GitHub with a MIT license.
+Now I've posted the program as open source on GitHub with a MIT license.
 
-Back when I was learning JS I found Danny Goodman's book "Dynamic HTML" from O'Reilly. It showed how to work with just HTML and produce a great app. That resource helped me write this interactive financial planning program as my first JS hobby project in 1998. That program is hosted at GetRichDieBroke.com.
+Back when I was learning JS I found Danny Goodman's book "Dynamic HTML" from O'Reilly. It showed how to work with just HTML and produce a great app. That resource helped me write this interactive financial planning program as my first JS hobby project in 1998. This program is hosted at GetRichDieBroke.com.
 
-You can run it locally by just loading the index.html in a browser.
+You can run it locally by by following these instructions.
 
 These instructions are for Windows.
 The Mac should be the same, but I have not tested it there.
 
-**Environment**
+**Local Environment**
 
 Clone the repo into a folder on your computer.
 
@@ -53,15 +53,15 @@ In .vscode/launch.json, select the configuration shown below.
 
 ```
 
-Now hit f5 to run the program on your browser.
+Now hit f5 to run the repo version of the program on your browser.
 
 **The Application**
-
-None of the above setup is needed to use it.
 
 The program is an easy to use teaching tool.
 
 It runs on iPads, notebooks, and desktop computers.
+
+None of the above setup is needed to use it.
 
 Anyone can run it. It's already hosted on the Web.
 
